@@ -1,0 +1,332 @@
+/* style.css */
+
+/* Reset CSS */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Global Styles */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+  }
+  
+  header {
+    position: fixed; /* Menggunakan position: fixed untuk membuat header tetap di posisi atas */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: url("wisata/main.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    color: #fff;
+    padding: 8px;
+    z-index: 1000; /* Menentukan tingkat lapisan elemen, pastikan nilainya lebih besar dari elemen lain di halaman */
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  nav ul li a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    background-color: #555;
+  }
+  
+  main {
+    padding: 0px;
+  }
+  
+  section#banner {
+    width: 100%;
+    background-image: url("wisata/main.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 250px 0;
+    color: white;
+  }
+  
+  section#banner h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  section#banner p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #555;
+  }
+
+  
+
+  section#paket-wisata {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  section#paket-wisata h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  section#paket-wisata .paket {
+    display: inline-block;
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: top;
+    margin-bottom: 50px; /* Menambahkan jarak space dengan item di bawahnya */
+  }
+  
+  section#paket-wisata .paket img {
+    width: 100%;
+    height: 225px;
+  }
+  
+  section#paket-wisata .paket h3 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  section#paket-wisata .paket p {
+    margin-bottom: 10px;
+  }
+  
+  section#paket-wisata .paket .btn {
+    background-color: #333;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  section#paket-wisata .paket .btn:hover {
+    background-color: #555;
+  }
+  
+
+  
+  #destinasi {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Mengatur 3 kolom dengan lebar yang sama */
+    gap: 1px; /* Mengurangi jarak antar item menjadi 1px */
+    text-align: center; /* Agar teks pada .destinasi-item menjadi tengah */
+    position: relative; /* Menambahkan positioning pada #destinasi */
+    padding-top: 15px; /* Menambahkan space di atas teks h2 */
+  }
+  
+  /* Menggunakan Flexbox untuk mengatur tata letak teks dan gambar */
+  .destinasi-item {
+    display: flex;
+    margin: -1cm;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Teks dan gambar akan diatur di tengah flex container */
+    height: 350px; /* Atur tinggi container agar teks dan gambar rata tengah */
+    position: relative; /* Menambahkan positioning pada .destinasi-item */
+    padding: 5px; /* Menambahkan padding pada .destinasi-item untuk membuat jarak antar image lebih dekat */
+  }
+  
+  .destinasi-item img {
+    width: 67%; /* Mengatur lebar gambar menjadi 67% */
+    height: 220px;
+    margin-bottom: 10px;
+  }
+  
+  .destinasi-item h3 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  #destinasi h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Menentukan tingkat lapisan elemen */
+  }
+  
+  
+  
+  
+  
+
+
+
+  
+
+
+
+
+/* Tambahkan gaya CSS yang sudah Anda miliki di sini */
+
+/* Gaya untuk kontainer popup */
+.kontainer-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.konten-popup {
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 80%; /* Batasi lebar konten popup */
+}
+
+.tutup-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.konten-popup img {
+  display: block; /* Agar elemen gambar bisa diatur margin secara otomatis */
+  margin: 0 auto; /* Atur margin secara otomatis untuk membuat gambar berada di tengah */
+  width: 55%; /* Lebar gambar popup 200px */
+  height: 30%; /* Tinggi gambar popup 150px */
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.konten-popup h3 {
+  margin-top: 10px;
+}
+
+.konten-popup p {
+  margin-top: 5px;
+}
+
+.konten-popup b {
+  margin-top: 3px;
+}
+
+/* Gaya untuk footer dan denah lokasi */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  width: 100%; /* Lebar gambar popup 200px */
+  height: 250px; /* Tinggi gambar popup 150px */
+  position: relative;
+  text-align: center;
+}
+
+.alamat {
+  margin-top: 30px;
+}
+
+.contact {
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.ikon-sosial-media {
+  margin-top: 10px; /* Atur nilai margin atas sesuai dengan jarak yang diinginkan */
+}
+
+.ikon-sosial-media a {
+  color: white; /* Atur warna ikon sesuai kebutuhan Anda */
+  font-size: 24px; /* Sesuaikan ukuran ikon dengan kebutuhan Anda */
+  margin: 0 10px; /* Atur margin antara ikon sosial media */
+}
+
+.denah-lokasi {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 400px; /* Sesuaikan lebar denah lokasi */
+  height: 90%; /* Sesuaikan tinggi denah lokasi */
+  /* Atur ukuran dan tata letak denah lokasi sesuai kebutuhan Anda */
+}
+
+.denah-lokasi img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Atur agar gambar denah lokasi sesuai dengan ukuran kotak */
+  border: 1px solid #ccc; /* Tambahkan garis pinggir untuk estetika (opsional) */
+  border-radius: 5px; /* Tambahkan radius sudut untuk estetika (opsional) */
+}
+
+
+/* Gaya untuk Logo Whatsapp */
+.whatsapp-icon {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: green;
+  padding: 15px;
+  border-radius: 50%;
+  z-index: 9999;
+}
+
+.whatsapp-icon a {
+  color: white;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wisata Destination</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Anda dapat membuat file eksternal style.css untuk mengatur tampilan CSS -->
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#banner">Beranda</a></li>
+        <li><a href="#paket-wisata">Paket Wisata</a></li>
+        <li><a href="#destinasi">Destinasi</a></li>
+        <li><a href="#Contact">Contact</a></li>
+        <li><a href="https://wa.me/6281236402061" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a></li>
+      <li><a href="https://web.facebook.com/merta.yasha.79" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="banner">
+      <h2>Selamat Datang Di Menjangan Island</h2>
+      <p>Nikmati liburan Anda dengan destinasi wisata yang menakjubkan.</p>
+      <a href="#" class="btn">Lihat Paket Wisata</a>
+    </section>
+
+    <section id="paket-wisata">
+      <h2>Paket Wisata Populer</h2>
+      <div class="paket">
+        <img src="wisata/paket 1.jpg" alt="Paket Wisata 1">
+        <h3>Paket Wisata 1</h3>
+        <p>Deskripsi paket wisata 1.</p>
+        <a href="#" class="btn" onclick="tampilkanPopup('wisata/paket 1.jpg', 'Paket Wisata 1', 'Snorkling di pulau menjangan island. Biaya = 10$ atau Rp 150.000 per 30 menit. Fasilitas = tabung tangki, kaca selam dan snookel')">Selengkapnya</a>
+      </div>
+      <div class="paket">
+        <img src="wisata/paket 3.jpeg" alt="Paket Wisata 2">
+        <h3>Paket Wisata 2</h3>
+        <p>Deskripsi paket wisata 2.</p>
+        <a href="#" class="btn" onclick="tampilkanPopup('wisata/paket 3.jpeg', 'Paket Wisata 2', 'Paket Snorkling dan Foto bawah air. Biaya = 20$ atau Rp 300.000 per 30 menit. Fasilitas = Perlengkapan Snorkling dan assiten foto bawah air')">Selengkapnya</a>
+      </div>
+      <div class="paket">
+        <img src="wisata/paket 1.jpg" alt="Paket Wisata 1">
+        <h3>Paket Wisata 3</h3>
+        <p>Deskripsi paket wisata 3.</p>
+        <a href="#" class="btn">Selengkapnya</a>
+      </div>
+      <div class="paket">
+        <img src="wisata/paket 1.jpg" alt="Paket Wisata 1">
+        <h3>Paket Wisata 4</h3>
+        <p>Deskripsi paket wisata 4.</p>
+        <a href="#" class="btn">Selengkapnya</a>
+      </div>
+      <div class="paket">
+        <img src="wisata/paket 1.jpg" alt="Paket Wisata 1">
+        <h3>Paket Wisata 5</h3>
+        <p>Deskripsi paket wisata 5.</p>
+        <a href="#" class="btn">Selengkapnya</a>
+      </div>
+      <div class="paket">
+        <img src="wisata/paket 1.jpg" alt="Paket Wisata 1">
+        <h3>Paket Wisata 6</h3>
+        <p>Deskripsi paket wisata 6.</p>
+        <a href="#" class="btn">Selengkapnya</a>
+      </div>
+    </section>
+
+
+   
+
+
+
+    
+
+    <section id="destinasi">
+      <h2>Destinasi Wisata</h2>
+      <div class="destinasi-item">
+        <img src="wisata/Paket 2.jpeg" alt="Destinasi 1">
+        <h3>Destinasi 1</h3>
+      </div>
+      <div class="destinasi-item">
+        <img src="wisata/Paket 2.jpeg" alt="Destinasi 2">
+        <h3>Destinasi 2</h3>
+      </div>
+      <div class="destinasi-item">
+        <img src="wisata/Paket 2.jpeg" alt="Destinasi 2">
+        <h3>Destinasi 2</h3>
+      </div>
+    </section>
+  </main>
+
+  <footer id="Contact">
+    <p>&copy; 2023 Wisata Destination. All rights reserved.</p>
+    <div class="denah-lokasi">
+      <img src="wisata/Lokasi.JPG" alt="Denah Lokasi">
+    </div>
+    <p class="alamat">Jln Raya Seririt-Gilimanuk</p>
+    <p >Sumber Klampok, Kec. Gerokgak, Kabupaten Buleleng, Bali</p>
+    <p class="contact">Contact </p>
+    <div class="ikon-sosial-media">
+      <a href="https://wa.me/6281236402061" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/wisata_destination" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/wisata_destination" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+    </div>
+  </footer>
+  
+  
+
+  
+  <div class="whatsapp-icon">
+    <a href="https://api.whatsapp.com/send?phone=6281236402061" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+
+
+ <!-- Kontainer Popup -->
+ <div id="kontainer-popup" class="kontainer-popup">
+  <div class="konten-popup">
+    <span class="tutup-btn" onclick="tutupPopup()">&times;</span>
+    <img id="popup-gambar" src="" alt="Paket Wisata">
+    <h3 id="popup-judul"></h3>
+    <p id="popup-deskripsi"></p>
+  </div>
+</div>
+
+
+
+  <script>
+    // Fungsi untuk menampilkan popup dengan gambar, judul, dan deskripsi yang diberikan
+function tampilkanPopup(gambarSrc, judul, deskripsi) {
+  const kontainerPopup = document.getElementById('kontainer-popup');
+  const popupGambar = document.getElementById('popup-gambar');
+  const popupJudul = document.getElementById('popup-judul');
+  const popupDeskripsi = document.getElementById('popup-deskripsi');
+
+  popupGambar.src = gambarSrc;
+  popupJudul.textContent = judul;
+  popupDeskripsi.textContent = deskripsi;
+
+  kontainerPopup.style.display = 'block';
+}
+
+// Fungsi untuk menutup popup
+function tutupPopup() {
+  const kontainerPopup = document.getElementById('kontainer-popup');
+  kontainerPopup.style.display = 'none';
+}
+
+  </script>
+</body>
+</html>
