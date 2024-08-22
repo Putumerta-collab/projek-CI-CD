@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_CREDENTIALS = credentials('idcredensialdockerhub') // Menggunakan ID kredensial Docker Hub Anda di Jenkins
+        DOCKER_HUB_CREDENTIALS = credentials('') // Menggunakan ID kredensial Docker Hub Anda di Jenkins
         DOCKER_IMAGE = 'pmerta22/testingjenkinsweb:tag' // Ganti dengan username dan nama repository di Docker Hub
     }
 
