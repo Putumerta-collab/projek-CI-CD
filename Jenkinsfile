@@ -1,10 +1,11 @@
 pipeline {
     agent any
 
-    environment {
-        DOCKER_HUB_CREDENTIALS = credentials('docker-hub-credentials') // Ganti dengan ID kredensial yang benar
-        DOCKER_IMAGE = 'pmerta22/testingjenkinsweb:tag'
+   environment {
+        DOCKERHUB_CREDENTIALS = credentials('DOCKERHUB_CREDENTIALS') // Gunakan ID kredensial yang telah Anda atur di Jenkins
+        IMAGE_NAME = 'pmerta22/testingjenkinsweb' // Ganti dengan nama image Docker Anda
     }
+
 
     stages {
         stage('Clone Repository') {
@@ -16,16 +17,17 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("${env.DOCKER_IMAGE}")
+                    dockerImage = docker.build("${IMAGE_NAME}")
                 }
             }
         }
 
-        stage('Push Docker Image to Docker Hub') {
+        stage('Push to Docker Hub') {
             steps {
                 script {
-                    docker.withRegistry('https://index.docker.io/v1/', "${DOCKER_HUB_CREDENTIALS}") {
-                        docker.image("${env.DOCKER_IMAGE}").push()
+                    docker.withRegistry('https://registry.hub.docker.com', 'DOCKERHUB_CREDENTIALS') {
+                        dockerImage.push("${env.BUILD_NUMBER}")
+                        dockerImage.push("latest")
                     }
                 }
             }
@@ -37,7 +39,7 @@ pipeline {
             cleanWs()
         }
         success {
-            echo 'Pipeline completed successfully!'
+            echo 'Pipeline completed successfully and image pushed to Docker Hub!'
         }
         failure {
             echo 'Pipeline failed.'
