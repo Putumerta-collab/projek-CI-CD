@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_CREDENTIALS = credentials('id') // Menggunakan ID kredensial Docker Hub Anda di Jenkins
-        DOCKER_IMAGE = 'pmerta22/testingjenkinsweb:tag' // Ganti dengan username dan nama repository di Docker Hub
+        DOCKER_HUB_CREDENTIALS = credentials('id') // Ganti dengan ID kredensial yang benar
+        DOCKER_IMAGE = 'pmerta22/testingjenkinsweb:tag'
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                git url: 'https://github.com/Putumerta-collab/projek-CI-CD.git', branch: 'main' // Ganti dengan URL repo GitHub Anda
+                git url: 'https://github.com/Putumerta-collab/projek-CI-CD.git', branch: 'main'
             }
         }
 
