@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_CREDENTIALS = credentials('id') // Ganti dengan ID kredensial yang benar
+        DOCKER_HUB_CREDENTIALS = credentials('docker-hub-credentials') // Ganti dengan ID kredensial yang benar
         DOCKER_IMAGE = 'pmerta22/testingjenkinsweb:tag'
     }
 
