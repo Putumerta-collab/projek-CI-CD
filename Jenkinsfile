@@ -3,7 +3,7 @@ pipeline {
 
    environment {
         DOCKERHUB_CREDENTIALS = credentials('DOCKERHUB_CREDENTIALS') // Gunakan ID kredensial yang telah Anda atur di Jenkins
-        IMAGE_NAME = 'pmerta22/jenkinsk8s' // Ganti dengan nama image Docker Anda
+        IMAGE_NAME = 'pmerta22/testingdeploy' // Ganti dengan nama image Docker Anda
     }
 
 
