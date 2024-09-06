@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 // Checkout code dari repository GitHub
-                git url: 'https://github.com/Putumerta-collab/Samplefirtproject.git', branch: 'main'
+                git url: 'https://github.com/Putumerta-collab/projek-CI-CD.git', branch: 'main'
             }
         }
 
