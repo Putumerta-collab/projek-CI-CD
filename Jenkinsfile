@@ -1,32 +1,42 @@
 pipeline {
     agent any
 
-   environment {
+    environment {
         DOCKERHUB_CREDENTIALS = credentials('PUJAREPO') // Gunakan ID kredensial yang telah Anda atur di Jenkins
         IMAGE_NAME = 'dpuja/test' // Ganti dengan nama image Docker Anda
     }
-
-
+    
     stages {
-        stage('Clone Repository') {
+        stage('Checkout Code') {
             steps {
-                git url: 'https://github.com/Putumerta-collab/projek-CI-CD.git', branch: 'main'
+                // Checkout code dari repository GitHub
+                git url: 'https://github.com/Putumerta-collab/Samplefirtproject.git', branch: 'main'
             }
         }
 
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build('your-image-name')
+                    // Build Docker image
+                    sh 'docker build -t $IMAGE_NAME .'
                 }
             }
         }
+
+        stage('Login to Docker Hub') {
+            steps {
+                script {
+                    // Login to Docker Hub
+                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+                }
+            }
+        }
+
         stage('Push to Docker Hub') {
             steps {
                 script {
-                    docker.withRegistry('https://index.docker.io/v1/', 'PUJAREPO') {
-                        docker.image('your-image-name').push('latest')
-                    }
+                    // Push Docker image to Docker Hub
+                    sh 'docker push $IMAGE_NAME'
                 }
             }
         }
@@ -34,13 +44,8 @@ pipeline {
 
     post {
         always {
-            cleanWs()
-        }
-        success {
-            echo 'Pipeline completed successfully and image pushed to Docker Hub!'
-        }
-        failure {
-            echo 'Pipeline failed.'
+            // Cleanup Docker images
+            sh 'docker rmi $IMAGE_NAME || true'
         }
     }
 }
